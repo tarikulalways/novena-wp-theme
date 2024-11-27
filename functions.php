@@ -1,4 +1,6 @@
 <?php 
+// tgm activation
+require_once get_template_directory(). '/tgm/active-tgm.php';
 
 // after setup theme
 

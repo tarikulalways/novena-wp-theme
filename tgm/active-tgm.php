@@ -16,7 +16,7 @@
                     'name' => 'Codestar Framework',
                     'slug' => 'codestar-framework',
                     'required' => true,
-                    'source' => 'https://github.com/Codestar/codestar-framework.git'
+                    'source' => 'https://github.com/Codestar/codestar-framework/archive/refs/heads/master.zip'
                 )
             );
 

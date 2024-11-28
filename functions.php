@@ -2,6 +2,9 @@
 // tgm activation
 require_once get_template_directory(). '/tgm/active-tgm.php';
 
+// theme option
+require_once get_template_directory(). '/theme-options/theme-option.php';
+
 // after setup theme
 
 if(!function_exists('novena_setup_theme')){

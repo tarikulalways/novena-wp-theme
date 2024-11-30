@@ -17,6 +17,11 @@
                     'slug' => 'codestar-framework',
                     'required' => true,
                     'source' => 'https://github.com/Codestar/codestar-framework/archive/refs/heads/master.zip'
+                ),
+                array(
+                    'name' => 'Simple Custom CSS and JS',
+                    'required' => true,
+                    'slug' => 'custom-css-js'
                 )
             );
 

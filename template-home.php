@@ -3,8 +3,7 @@
 	get_header();
 ?>
 	
-
-
+<?php $config = get_option('novena_options'); ?>
 
 <!-- Slider Start -->
 <section class="banner">
@@ -13,12 +12,12 @@
 			<div class="col-lg-6 col-md-12 col-xl-7">
 				<div class="block">
 					<div class="divider mb-3"></div>
-					<span class="text-uppercase text-sm letter-spacing ">Total Health care solution</span>
-					<h1 class="mb-3 mt-3">Your most trusted health partner</h1>
+					<span class="text-uppercase text-sm letter-spacing "><?php echo esc_html__($config['hero_sub_title'], 'novena'); ?></span>
+					<h1 class="mb-3 mt-3"><?php echo esc_html__($config['hero_title'], 'novena')?></h1>
 					
-					<p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
+					<p class="mb-4 pr-5"><?php echo esc_html__($config['hero_description'], 'novena'); ?></p>
 					<div class="btn-container ">
-						<a href="appoinment.html" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Make appoinment <i class="icofont-simple-right ml-2  "></i></a>
+						<a href="<?php echo esc_url($config['hero_btn_link']); ?>" target="_blank" class="btn btn-main-2 btn-icon btn-round-full"><?php echo esc_html__($config['hero_btn_title'], 'novena'); ?> <i class="icofont-simple-right ml-2  "></i></a>
 					</div>
 				</div>
 			</div>
@@ -34,22 +33,28 @@
 						<div class="feature-icon mb-4">
 							<i class="icofont-surgeon-alt"></i>
 						</div>
-						<span>24 Hours Service</span>
-						<h4 class="mb-3">Online Appoinment</h4>
-						<p class="mb-4">Get ALl time support for emergency.We have introduced the principle of family medicine.</p>
-						<a href="appoinment.html" class="btn btn-main btn-round-full">Make a appoinment</a>
+						<span><?php echo esc_html__($config['merket_sub_title'], 'novena'); ?></span>
+						<h4 class="mb-3"><?php echo esc_html__($config['merket_title'], 'novena'); ?></h4>
+						<p class="mb-4"><?php echo esc_html__($config['merket_description'], 'novena'); ?></p>
+						<a href="<?php echo esc_url($config['merket_btn_link']); ?>" class="btn btn-main btn-round-full"><?php echo esc_html__($config['merket_btn_text'], 'novena'); ?></a>
 					</div>
 				
 					<div class="feature-item mb-5 mb-lg-0">
 						<div class="feature-icon mb-4">
 							<i class="icofont-ui-clock"></i>
 						</div>
-						<span>Timing schedule</span>
-						<h4 class="mb-3">Working Hours</h4>
+						<span><?php echo esc_html__($config['work_sub_title'], 'novena'); ?></span>
+						<h4 class="mb-3"><?php echo esc_html__($config['work_title'], 'novena')?></h4>
 						<ul class="w-hours list-unstyled">
-		                    <li class="d-flex justify-content-between">Sun - Wed : <span>8:00 - 17:00</span></li>
-		                    <li class="d-flex justify-content-between">Thu - Fri : <span>9:00 - 17:00</span></li>
-		                    <li class="d-flex justify-content-between">Sat - sun : <span>10:00 - 17:00</span></li>
+							<?php 
+								if(!empty($config['work_scheduls'])):
+									foreach($config['work_scheduls'] as $item):
+							?>
+		                    <li class="d-flex justify-content-between"><?php echo esc_html__($item['schedul_week_name'], 'novena'); ?> <span><?php echo esc_html__($item['schedul_time'], 'novena'); ?></span></li>
+							<?php 
+									endforeach; 
+								endif; 
+							?>
 		                </ul>
 					</div>
 				
@@ -57,9 +62,9 @@
 						<div class="feature-icon mb-4">
 							<i class="icofont-support"></i>
 						</div>
-						<span>Emegency Cases</span>
-						<h4 class="mb-3">1-800-700-6200</h4>
-						<p>Get ALl time support for emergency.We have introduced the principle of family medicine.Get Conneted with us for any urgency .</p>
+						<span><?php echo esc_html__($config['emergency_sub_title'], 'novena')?></span>
+						<h4 class="mb-3"><?php echo esc_html__($config['emergency_number'], 'novena')?></h4>
+						<p><?php echo esc_html__($config['emergency_des'], 'novena')?></p>
 					</div>
 				</div>
 			</div>

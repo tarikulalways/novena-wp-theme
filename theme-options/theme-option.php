@@ -172,7 +172,7 @@
                     'default' => 'Working Hours'
                 ),
                 array(
-                    'id' => 'work_schedul',
+                    'id' => 'work_scheduls',
                     'title' => esc_html__('Schedul', 'novena'),
                     'type' => 'group',
                     'button_title' => esc_html__('Add Schedul', 'novena'),

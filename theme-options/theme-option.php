@@ -217,6 +217,124 @@
                 )
             )
         ));
+
+        // Personal care
+        CSF::createSection($prefix, array(
+            'id' => 'personal_care',
+            'title' => esc_html__('Personal care', 'novena')
+        ));
+
+        // Personal care info
+        CSF::createSection($prefix, array(
+            'parent' => 'personal_care',
+            'title' => esc_html__('Personal Info', 'novena'),
+            'fields' => array(
+                array(
+                    'id' => 'personal_info_1_img',
+                    'type' => 'upload',
+                    'title' => esc_html__('Image 1', 'novena')
+                ),
+                array(
+                    'id' => 'personal_info_2_img',
+                    'type' => 'upload',
+                    'title' => esc_html__('Image 2', 'novena')
+                ),
+                array(
+                    'id' => 'personal_info_3_img',
+                    'type' => 'upload',
+                    'title' => esc_html__('Image 3', 'novena')
+                ),
+                array(
+                    'id' => 'personal_info_title',
+                    'type' => 'text',
+                    'title' => esc_html__('Title', 'novena'),
+                    'default' => 'Personal care & healthy living'
+                ),
+                array(
+                    'id' => 'personal_info_des',
+                    'type' => 'textarea',
+                    'title' => esc_html__('Description', 'novena'),
+                    'default' => 'We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.'
+                ),
+                array(
+                    'id' => 'personal_info_btn_text',
+                    'type' => 'text',
+                    'title' => esc_html__('Buttonn Text', 'novena'),
+                    'default' => 'SERVICE'
+                ),
+                array(
+                    'id' => 'personal_info_btn_link',
+                    'type' => 'text',
+                    'title' => esc_html__('Buttonn Link', 'novena'),
+                    'default' => '#'
+                )
+            )
+        ));
+
+        // novena counter
+        CSF::createSection($prefix, array(
+            'id' => 'novena_counter',
+            'title' => esc_html__('Counter', 'novena')
+        ));
+
+        // counter content
+        CSF::createSection($prefix, array(
+            'parent' => 'novena_counter',
+            'title' => esc_html__('Counter Content', 'novena'),
+            'fields' => array(
+                array(
+                    'id' => 'counter_bg_img',
+                    'type' => 'upload',
+                    'title' => esc_html__('Counter background img', 'novena')
+                ),
+                array(
+                    'id' => 'counter_number',
+                    'title' => esc_html__('Counter Number', 'novena'),
+                    'type' => 'group',
+                    'button_title' => esc_html__('Add Counter', 'novena'),
+                    'fields' => array(
+                        array(
+                            'id' => 'counter_digit',
+                            'title' => esc_html__('Digit', 'novena'),
+                            'type' => 'number',
+                            'default' => '58'
+                        ),
+                        array(
+                            'id' => 'counter_title',
+                            'title' => esc_html__('Title', 'novena'),
+                            'type' => 'text',
+                            'default' => 'Happy People'
+                        )
+                    )
+                )
+            )
+        ));
+
+        // Award header
+        CSF::createSection($prefix, array(
+            'id' => 'award_header',
+            'title' => esc_html__('Award Header', 'novena')
+        ));
+
+        // Award header content
+        CSF::createSection($prefix, array(
+            'parent' => 'award_header',
+            'title' => esc_html__('Award content', 'novena'),
+            'fields' => array(
+                array(
+                    'id' => 'award_title',
+                    'title' => esc_html__('Title', 'novena'),
+                    'type' => 'text',
+                    'default' => 'Award winning patient care'
+                ),
+                array(
+                    'id' => 'award_des',
+                    'title' => esc_html__('Description', 'novena'),
+                    'type' => 'textarea',
+                    'default' => 'Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.'
+                )
+            )
+        ));
     }
 
 

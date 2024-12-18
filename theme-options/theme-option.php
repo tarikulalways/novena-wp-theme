@@ -335,6 +335,57 @@
                 )
             )
         ));
+
+        // boot appoinment
+        CSF::createSection($prefix, array(
+            'id' => 'boot_appoinment',
+            'title' => esc_html__('Book Appoinment', 'novena'),
+            'fields' => array(
+                array(
+                    'id' => 'book_app_title',
+                    'title' => esc_html__('Title', 'novena'),
+                    'type' => 'text',
+                    'default' => 'Book appoinment'
+                ),
+                array(
+                    'id' => 'book_app_des',
+                    'title' => esc_html__('Description', 'novena'),
+                    'type' => 'textarea',
+                    'default' => 'Mollitia dicta commodi est recusandae iste, natus eum asperiores corrupti qui velit . Iste dolorum atque similique praesentium soluta.'
+                ),
+                array(
+                    'id' => 'book_quick_num',
+                    'title' => esc_html__('Number', 'novena'),
+                    'type' => 'text',
+                    'default' => '23 345 67980'
+                ),
+                array(
+                    'id' => 'book_app_thumb',
+                    'title' => esc_html__('Thumbnail', 'novena'),
+                    'type' => 'upload'
+                )
+            )
+        ));
+
+        // testimonial
+        CSF::createSection($prefix, array(
+            'id' => 'testimonial_header',
+            'title' => esc_html__('Testimonial', 'novena'),
+            'fields' => array(
+                array(
+                    'id' => 'testimonial_title',
+                    'title' => esc_html__('Title', 'novena'),
+                    'type' => 'text',
+                    'default' => 'We served over 5000+ Patients'
+                ),
+                array(
+                    'id' => 'testimonial_des',
+                    'title' => esc_html__('Description', 'novena'),
+                    'type' => 'textarea',
+                    'default' => 'Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.'
+                )
+            )
+        ));
     }
 
 

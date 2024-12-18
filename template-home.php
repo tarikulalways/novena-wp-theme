@@ -140,88 +140,42 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-7 text-center">
 				<div class="section-title">
-					<h2>Award winning patient care</h2>
+					<h2><?php echo $config['award_title']; ?></h2>
 					<div class="divider mx-auto my-4"></div>
-					<p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.</p>
+					<p><?php echo $config['award_des']; ?></p>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
+
+			<?php 
+				$args = array(
+					'post_type' => 'awards',
+					'posts_per_page' => 6
+				);
+				$query = new WP_Query($args);
+				if($query->have_posts()): 
+					while($query->have_posts()): $query->the_post();
+			?>
 			<div class="col-lg-4 col-md-6 col-sm-6">
 				<div class="service-item mb-4">
-					<div class="icon d-flex align-items-center">
-						<i class="icofont-laboratory text-lg"></i>
-						<h4 class="mt-3 mb-3">Laboratory services</h4>
+					<div class="icon d-flex align-items-center text-lg">
+						<!-- <i class="icofont-laboratory text-lg"></i> -->
+						 <?php the_field('icon_class'); ?>
+						<h4 class="mt-3 mb-3"><?php the_title(); ?></h4>
 					</div>
 
 					<div class="content">
-						<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+						<?php the_content(); ?>
 					</div>
 				</div>
 			</div>
-
-			<div class="col-lg-4 col-md-6 col-sm-6">
-				<div class="service-item mb-4">
-					<div class="icon d-flex align-items-center">
-						<i class="icofont-heart-beat-alt text-lg"></i>
-						<h4 class="mt-3 mb-3">Heart Disease</h4>
-					</div>
-					<div class="content">
-						<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-lg-4 col-md-6 col-sm-6">
-				<div class="service-item mb-4">
-					<div class="icon d-flex align-items-center">
-						<i class="icofont-tooth text-lg"></i>
-						<h4 class="mt-3 mb-3">Dental Care</h4>
-					</div>
-					<div class="content">
-						<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-					</div>
-				</div>
-			</div>
-
-
-			<div class="col-lg-4 col-md-6 col-sm-6">
-				<div class="service-item mb-4">
-					<div class="icon d-flex align-items-center">
-						<i class="icofont-crutch text-lg"></i>
-						<h4 class="mt-3 mb-3">Body Surgery</h4>
-					</div>
-
-					<div class="content">
-						<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-4 col-md-6 col-sm-6">
-				<div class="service-item mb-4">
-					<div class="icon d-flex align-items-center">
-						<i class="icofont-brain-alt text-lg"></i>
-						<h4 class="mt-3 mb-3">Neurology Sargery</h4>
-					</div>
-					<div class="content">
-						<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-lg-4 col-md-6 col-sm-6">
-				<div class="service-item mb-4">
-					<div class="icon d-flex align-items-center">
-						<i class="icofont-dna-alt-1 text-lg"></i>
-						<h4 class="mt-3 mb-3">Gynecology</h4>
-					</div>
-					<div class="content">
-						<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-					</div>
-				</div>
-			</div>
+			<?php 
+				endwhile;
+				wp_reset_postdata();
+			endif;
+			?>
 		</div>
 	</div>
 </section>
@@ -230,17 +184,17 @@
 		<div class="row align-items-center">
 			<div class="col-lg-6 ">
 				<div class="appoinment-content">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/about/img-3.jpg" alt="" class="img-fluid">
+					<img src="<?php echo $config['book_app_thumb']; ?>" alt="" class="img-fluid">
 					<div class="emergency">
-						<h2 class="text-lg"><i class="icofont-phone-circle text-lg"></i>+23 345 67980</h2>
+						<h2 class="text-lg"><i class="icofont-phone-circle text-lg"></i><?php echo $config['book_quick_num']; ?></h2>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-10 ">
 				<div class="appoinment-wrap mt-5 mt-lg-0">
-					<h2 class="mb-2 title-color">Book appoinment</h2>
-					<p class="mb-4">Mollitia dicta commodi est recusandae iste, natus eum asperiores corrupti qui velit . Iste dolorum atque similique praesentium soluta.</p>
-					     <form id="#" class="appoinment-form" method="post" action="#">
+					<h2 class="mb-2 title-color"><?php echo $config['book_app_title']; ?></h2>
+					<p class="mb-4"><?php echo $config['book_app_des']; ?></p>
+					<form id="#" class="appoinment-form" method="post" action="#">
                     <div class="row">
                          <div class="col-lg-6">
                             <div class="form-group">
@@ -310,9 +264,9 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-7">
 				<div class="section-title text-center">
-					<h2>We served over 5000+ Patients</h2>
+					<h2><?php echo $config['testimonial_title']; ?></h2>
 					<div class="divider mx-auto my-4"></div>
-					<p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.</p>
+					<p><?php echo $config['testimonial_des']; ?></p>
 				</div>
 			</div>
 		</div>
@@ -321,83 +275,33 @@
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-lg-12 testimonial-wrap-2">
+				<?php 
+					$args = array(
+						'post_type' => 'testimonials',
+						'posts_per_page' => -1
+					);
+					$query = new WP_Query($args);
+					if($query->have_posts()):
+						while($query->have_posts()): $query->the_post();
+				?>
 				<div class="testimonial-block style-2  gray-bg">
 					<i class="icofont-quote-right"></i>
 
 					<div class="testimonial-thumb">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/team/test-thumb1.jpg" alt="" class="img-fluid">
+						<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>" class="img-fluid">
 					</div>
 
 					<div class="client-info ">
-						<h4>Amazing service!</h4>
-						<span>John Partho</span>
-						<p>
-							They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
-						</p>
+						<h4><?php the_title(); ?></h4>
+						<span><?php the_field('designation'); ?></span>
+						<?php the_content(); ?>
 					</div>
 				</div>
-
-				<div class="testimonial-block style-2  gray-bg">
-					<div class="testimonial-thumb">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/team/test-thumb2.jpg" alt="" class="img-fluid">
-					</div>
-
-					<div class="client-info">
-						<h4>Expert doctors!</h4>
-						<span>Mullar Sarth</span>
-						<p>
-							They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
-						</p>
-					</div>
-					
-					<i class="icofont-quote-right"></i>
-				</div>
-
-				<div class="testimonial-block style-2  gray-bg">
-					<div class="testimonial-thumb">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/team/test-thumb3.jpg" alt="" class="img-fluid">
-					</div>
-
-					<div class="client-info">
-						<h4>Good Support!</h4>
-						<span>Kolis Mullar</span>
-						<p>
-							They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
-						</p>
-					</div>
-					
-					<i class="icofont-quote-right"></i>
-				</div>
-
-				<div class="testimonial-block style-2  gray-bg">
-					<div class="testimonial-thumb">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/team/test-thumb4.jpg" alt="" class="img-fluid">
-					</div>
-
-					<div class="client-info">
-						<h4>Nice Environment!</h4>
-						<span>Partho Sarothi</span>
-						<p class="mt-4">
-							They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
-						</p>
-					</div>
-					<i class="icofont-quote-right"></i>
-				</div>
-
-				<div class="testimonial-block style-2  gray-bg">
-					<div class="testimonial-thumb">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/team/test-thumb1.jpg" alt="" class="img-fluid">
-					</div>
-
-					<div class="client-info">
-						<h4>Modern Service!</h4>
-						<span>Kolis Mullar</span>
-						<p>
-							They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
-						</p>
-					</div>
-					<i class="icofont-quote-right"></i>
-				</div>
+				<?php 
+					endwhile;
+					wp_reset_postdata();
+				endif;
+				?>
 			</div>
 		</div>
 	</div>

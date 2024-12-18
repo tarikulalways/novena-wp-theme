@@ -5,6 +5,9 @@ require_once get_template_directory(). '/tgm/active-tgm.php';
 // theme option
 require_once get_template_directory(). '/theme-options/theme-option.php';
 
+// custom post type
+require_once get_template_directory(). '/inc/custom-post.php';
+
 // after setup theme
 
 if(!function_exists('novena_setup_theme')){
@@ -36,5 +39,6 @@ add_action('after_setup_theme', 'novena_setup_theme');
 
 // css js enqueue
 get_template_part('inc/css-js');
+
 
 

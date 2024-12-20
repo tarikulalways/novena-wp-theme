@@ -1,17 +1,22 @@
+<?php $config = get_option('novena_options'); ?>
 <footer class="footer section gray-bg">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 mr-auto col-sm-6">
 				<div class="widget mb-5 mb-lg-0">
 					<div class="logo mb-4">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="" class="img-fluid">
+						<img src="<?php echo $config['footer_logo_img']; ?>" alt="" class="img-fluid">
 					</div>
-					<p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur veritatis eveniet distinctio possimus.</p>
+					<p><?php echo $config['footer_logo_des']; ?></p>
 
 					<ul class="list-inline footer-socials mt-4">
-						<li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="icofont-facebook"></i></a></li>
-						<li class="list-inline-item"><a href="https://twitter.com/themefisher"><i class="icofont-twitter"></i></a></li>
-						<li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i class="icofont-linkedin"></i></a></li>
+						<?php 
+							foreach($config['footer_socials'] as $social_item):
+						?>
+
+						<li class="list-inline-item"><a href="<?php echo $social_item['footer_social_link']; ?>"><i class="<?php echo $social_item['footer_social_icon']; ?>"></i></a></li>
+
+						<?php endforeach; ?>
 					</ul>
 				</div>
 			</div>

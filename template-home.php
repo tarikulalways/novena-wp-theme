@@ -311,9 +311,9 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-7">
 				<div class="section-title text-center">
-					<h2>Partners who support us</h2>
+					<h2><?php echo $config['partners_title']; ?></h2>
 					<div class="divider mx-auto my-4"></div>
-					<p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.</p>
+					<p><?php echo $config['partners_des']; ?></p>
 				</div>
 			</div>
 		</div>
@@ -321,56 +321,15 @@
 
 	<div class="container">
 		<div class="row clients-logo">
+			<?php 
+				foreach($config['partners_groups'] as $company):
+			?>
 			<div class="col-lg-2">
 				<div class="client-thumb">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/about/1.png" alt="" class="img-fluid">
+					<img src="<?php echo $company['company_logo']; ?>" alt="" class="img-fluid">
 				</div>
 			</div>
-			<div class="col-lg-2">
-				<div class="client-thumb">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/about/2.png" alt="" class="img-fluid">
-				</div>
-			</div>
-			<div class="col-lg-2">
-				<div class="client-thumb">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/about/3.png" alt="" class="img-fluid">
-				</div>
-			</div>
-			<div class="col-lg-2">
-				<div class="client-thumb">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/about/4.png" alt="" class="img-fluid">
-				</div>
-			</div>
-			<div class="col-lg-2">
-				<div class="client-thumb">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/about/5.png" alt="" class="img-fluid">
-				</div>
-			</div>
-			<div class="col-lg-2">
-				<div class="client-thumb">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/about/6.png" alt="" class="img-fluid">
-				</div>
-			</div>
-			<div class="col-lg-2">
-				<div class="client-thumb">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/about/3.png" alt="" class="img-fluid">
-				</div>
-			</div>
-			<div class="col-lg-2">
-				<div class="client-thumb">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/about/4.png" alt="" class="img-fluid">
-				</div>
-			</div>
-			<div class="col-lg-2">
-				<div class="client-thumb">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/about/5.png" alt="" class="img-fluid">
-				</div>
-			</div>
-			<div class="col-lg-2">
-				<div class="client-thumb">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/about/6.png" alt="" class="img-fluid">
-				</div>
-			</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>

@@ -386,6 +386,127 @@
                 )
             )
         ));
+
+        // Partners who support us
+        CSF::createSection($prefix, array(
+            'id' => 'partners_section',
+            'title' => esc_html__('Partners', 'novena'),
+            'fields' => array(
+                array(
+                    'id' => 'partners_title',
+                    'title' => esc_html__('Title', 'novena'),
+                    'type' => 'text',
+                    'default' => 'Partners who support us'
+                ),
+                array(
+                    'id' => 'partners_des',
+                    'title' => esc_html__('Description', 'novena'),
+                    'type' => 'textarea',
+                    'default' => 'Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.'
+                ),
+                array(
+                    'id' => 'partners_groups',
+                    'title' => esc_html__('Partners Logo', 'novena'),
+                    'type' => 'group',
+                    'button_title' => esc_html__('Add new company logo', 'novena'),
+                    'fields' => array(
+                        array(
+                            'id' => 'company_name',
+                            'title' => esc_html__('Company Name', 'novena'),
+                            'type' => 'text'
+                        ),
+                        array(
+                            'id' => 'company_logo',
+                            'title' => esc_html__('Company Logo', 'novena'),
+                            'type' => 'upload'
+                        )
+                    )
+                )
+            )
+        ));
+
+        // footer logo
+        CSF::createSection($prefix, array(
+            'id' => 'footer_area',
+            'title' => esc_html__('Footer Area', 'Novena'),
+            'menu_icon' => 'icofont-email'
+        ));
+
+        // footer logo content
+        CSF::createSection($prefix, array(
+            'parent' => 'footer_area',
+            'title' => esc_html__('Footer Logo Content', 'novena'),
+            'fields' => array(
+                array(
+                    'id' => 'footer_logo_img',
+                    'title' => esc_html__('Footer Logo Image', 'novena'),
+                    'type' => 'upload'
+                ),
+                array(
+                    'id' => 'footer_logo_des',
+                    'title' => esc_html__('Footer Logo Description', 'novena'),
+                    'type' => 'text',
+                    'default' => 'Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur veritatis eveniet distinctio possimus.'
+                ),
+                array(
+                    'id' => 'footer_socials',
+                    'title' => esc_html__('Footer Social', 'novena'),
+                    'type' => 'group',
+                    'button_title' => esc_html__('Add socials', 'novena'),
+                    'fields' => array(
+                        array(
+                            'id' => 'footer_social_icon',
+                            'title' => esc_html__('Footer social icon', 'novena'),
+                            'type' => 'icon'
+                        ),
+                        array(
+                            'id' => 'footer_social_link',
+                            'title' => esc_html__('Social link', 'novena'),
+                            'type' => 'text'
+                        )
+                    )
+                )
+            )
+        ));
+
+        // footer cta area
+        CSF::createSection($prefix, array(
+            'parent' => 'footer_area',
+            'title' => esc_html__('Footer CTA', 'novena'),
+            'fields' => array(
+                array(
+                    'id' => 'footer_cta_section_title',
+                    'title' => esc_html__('Footer CTA Title', 'novena'),
+                    'type' => 'text',
+                    'default' => 'Get in Touch'
+                ),
+                array(
+                    'id' => 'footer_cta_lists',
+                    'title' => esc_html__('Footer CTA Lists', 'novena'),
+                    'type' => 'group',
+                    'button_title' => esc_html__('Add new footer cta list', 'novena'),
+                    'fields' => array(
+                        array(
+                            'id' => 'footer_cta_icon',
+                            'title' => esc_html__('Footer CTA Icon', 
+                            'novena'),
+                            'type' => 'icon'
+                        ),
+                        array(
+                            'id' => 'footer_cta_sub_title',
+                            'title' => esc_html__('Footer CTA Sub Title',  'novena'),
+                            'type' => 'text',
+                            'default' => 'Support Available for 24/7'
+                        ),
+                        array(
+                            'id' => 'footer_cta_title',
+                            'title' => esc_html__('Footer CTA Title',  'novena'),
+                            'type' => 'text'
+                        )
+                    )
+                )
+            )
+        ));
     }
 
 

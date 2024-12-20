@@ -9,6 +9,10 @@
             wp_enqueue_style('bootstrap', get_template_directory_uri() . '/plugins/bootstrap/css/bootstrap.min.css', array(), '4.6.0', 'all');
             // Icon Font CSS
             wp_enqueue_style('icofont', get_template_directory_uri() . '/plugins/icofont/icofont.min.css', array(), '1.0.1', 'all');
+
+            // font awasome CSS
+            wp_enqueue_style('fontawsome', get_template_directory_uri() . '/plugins/font/all.min.css', array(), '1.0.1', 'all');
+
             // Slick Slider CSS
             wp_enqueue_style('slick', get_template_directory_uri() . '/plugins/slick-carousel/slick/slick.css', array(), '1.8.1', 'all');
             wp_enqueue_style('slick-theme', get_template_directory_uri() . '/plugins/slick-carousel/slick/slick-theme.css', array(), '1.8.1', 'all');
